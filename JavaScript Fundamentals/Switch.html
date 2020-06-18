@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+     <!-- Một câu lệnh switch có thể thay thế nhiều câu lệnh if 
+        Nó là cách để so sánh một giá trị với nhiều biến thể
+        Một switch có nhiều "case" và chỉ một lựa chọn "default"
+        -----------------
+        switch(n){
+            case 'value1': tương đương với lại if(n === 'value1')
+            //code 
+            break;
+            case 'value2': tương đương với lại if(n==='value2')
+            //code
+            break;
+            default:
+            //code
+            break;
+        }
+        -------------------
+        Giá trị của n sẽ được đánh giá sự bằng với giá trị đầu tiền 
+        của case rồi đến giá trị thứ 2 và cứ thế cho đến default;
+        Nếu sự bằng nhau được tìm thấy thì switch sẽ thực hiện đoạn 
+        mã bên trong case, cho đến khi gặp break gần nhất, hoặc đến 
+        khi kết thúc switch.
+        Nếu không có trường hợp nào phù hợp thì default sẽ được thực
+        hiện.
+        -------------------
+        Một ví dụ về switch
+        let a = 2+2;
+        switch(a){
+            case 1: alert('Giá trị kiểm tra đầu');
+                break;
+            case 2: alert('2');
+                break;
+            default: alert('Khong có giá trị nào đúng');
+                break;
+        }-> kết quả sẽ trả về là a=4 và so sánh lần lượt vói các case 
+        và không có case nào bằng nên kết quả trả về là default.
+        Nếu thay let a = 1, và bỏ break đi khỏi các case, thì nó sẽ 
+        thực hiện mã trong case 1 và các case tiếp theo mà không cần
+        kiểm tra điều kiện. Nó tương tự như việc chúng ta viết thế này:
+        let a = 1;
+        switch(a){
+            case 1: alert('Giá trị 1');alert('Giá trị 2');alert('Giá trị 3');
+            default: alert('không có giá trị');
+        }
+
+        ----------------------
+        Switch luôn cho phép biểu thức tùy ý
+        let a = "1";
+        let b = 0;
+        switch(+a){
+            case b+1: alert('khi chương trình chạy, +a trả về kết quả = 1  // cho phép biểu thức tùy ý trong case
+            chính xác bằng b+1 = 0 +1 , nên code này được chạy');
+            default: alert('Không có kết quả');
+        --------------------
+        Nếu chúng ta muốn một lần kiểm tra chạy 2 trường hợp trở lên 
+        thì nên gom nhóm nó lại,
+         let a = 3;
+         switch(a){
+             case 1: alert('Lần đầu chạy');
+               break;
+             case 3:  // bắt đầu gom nhóm
+             case 5: alert('Gom nhóm 3 với nhóm 5 được chạy, như vừa nói 
+             ở trên, không có break nó sẽ không kiểm tra điều kiện mà chạy
+              đến break gần nhất');
+              default: alert('Chạy mặc định'); break;
+         }
+         Lúc này  case 3 và case 5 cùng hiện thị code giống nhau.
+         --------------------
+         Vấn đề thường xảy ra.
+         Các loại kiểm tra trong nghiêm ngặt yêu cầu phải cùng loại, nếu 
+         giá trị không cùng loại dữ liệu thì default sẽ được thực thi.
+         let test = prompt('nhap vao gia tri'); // dữ liệu nhập vào là string
+         switch(test){
+             case '1': alert('vua nhập vao string 1');
+                break;
+            case 2 : alert('Lệnh này không được thực thi, default là kết quả') // dữ liệu đánh giá lại là kiểu số, vậy default sẽ đươc thực hiện
+                break;
+            default: alert('Kết quả này hiện thị khi khác loại ktra ở trên')
+                break;
+         }
+         ------------------------
+         Bài 1: Viết lại if else tương ứng với mã bên dưới
+        switch (browser) {
+        case 'Edge':
+            alert( "You've got the Edge!" );
+            break;
+
+        case 'Chrome':
+        case 'Firefox':
+        case 'Safari':
+        case 'Opera':
+            alert( 'Okay we support these browsers too' );
+            break;
+
+        default:
+            alert( 'We hope that this page looks ok!' );
+        }
+
+        Bài làm
+        if(browner == Edge){
+            alert("You've got the Edge!");
+        }else if(browser == 'Chrome' || 'Firefox' || 'Safiri' || 'Opera'){
+            alert('Okey we support these browsers too')
+        }else{
+            alert('We hope that this page looks ok');
+        }
+        -----------------------------
+        Viêt code bên dưới thành switch
+        let a = +prompt('a?', '');
+
+        if (a == 0) {
+        alert( 0 );
+        }
+        if (a == 1) {
+        alert( 1 );
+        }
+
+        if (a == 2 || a == 3) {
+        alert( '2,3' );
+        }
+
+        Bài làm
+        let a = +prompt('a?', '');
+        switch(a){
+            case 0: alert(0);
+                break;
+            case 1: alert(1);
+                break;
+            case 2:
+            case 3: alert('2, 3');
+                break;
+            default: alert('Không phải TH 0,1,2,3');
+                break;
+        }
+     -->
+    
+</body>
+</html>

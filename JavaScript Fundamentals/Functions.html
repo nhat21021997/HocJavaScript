@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <!-- 
+        Func được xây dựng để mã được gọi lại nhiều lần mà không cần  viết 
+        lại chúng.
+        ----
+        Có 2 cách tạo function: Function Declaration, Function Expression
+        Chúng ta sẽ đi xây dựng và bán tán về nó:
+        let fistName ='Hòa';
+        let lastName = 'Tạ';
+        function showMess(fistName, lastName){
+            alert(`Xin chào ${fistName} ${lastName}`);
+        }
+        showMess('Nhat', Nguyen);
+        showMess(); // xin chào underfine underfine
+        ---------------
+        function có toàn quyền truy cập biến bên ngoài và sửa đổi nó 
+        let name = 'bob';
+        function showMess(){
+            name = 'John'; // không khai báo lại name
+            let message = 'hello' + name;
+            alert(message);
+        }
+        alert(name); // bob
+        showMess();
+        alert(name);// John;
+
+        -------
+        Biến bên ngoài được sử dụng nếu không có biến bên trong được khai báo.
+        let number = 1;
+        function checkNum(){
+         let number = 2;
+         show mess = 'số' + number; 
+         alert(mess); // số 2
+        }
+        alert(number); //1
+        checkNum();
+        alert(number); 1
+
+        --------------------
+        Một hàm luôn nhận bản sao của giá trị
+        function show(form,text){
+            form = form + '*';
+            alert(form, text);
+        }
+        let form = 'Ann';
+        show(form, 'hello');
+        alert(form);
+
+        -------
+        Một tham số không có giá trị mặc định nó bằng undefined
+        để kiểm tra nó ta dùng undefined
+        function checkEmpty(text){
+            if(text == undefined){
+                text = 'Giá trị text là trống';
+            }
+            alert(text);
+        }
+        checkEmpty();
+
+        hoặc sử dụng phép toán || để kiểm tra: 
+        function showMess(text){
+            text = text || 'Đối trượng text trống';
+            alert(text);
+
+        }
+        showMess();
+
+     -->
+     
+     
+     <script>
+
+    </script>
+</body>
+</html>
