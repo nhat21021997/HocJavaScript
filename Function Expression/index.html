@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./Function Expression.js"></script>
-</head>
-<body>
+<script>
+'use strict';
+//kiểm tra xem người truy cập có đủ tuổi ko, nếu đủ tuổi báo được truy cập, không đủ tuổi báo không, Người dùng  nhập vào từ prompt
+function checkAge(age){
+  if(age >= 18){
+    return true;
+  }else{
+    return confirm('Bố mẹ đã cho phép bạn quyền truy cập');
+    
+  }
+}
+// nhhập vào tuổi
+let wecome;
+    let age = prompt('kiem tra tuoi', 18);
+        if(age >= 18){
+            wecome = function(){
+                alert('Được quyền vào');
+            }
+        }else{
+             wecome = function(){
+                alert('không được vào');
+            }
+        }
+        
+        wecome();
    
-</body>
-</html>
+        //err: wecome not defined
+</script>

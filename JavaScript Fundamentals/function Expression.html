@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function expression</title>
+</head>
+<body>
+    <!-- 
+        function sayHi(){
+            alert('Hello');
+        }
+        alert(sayHi); // câu lệnh trả về mã code chứ không chạy chương trình;
+        let func = sayHi; (2)
+        sayHi();
+        func();
+
+        Nếu ở mục số 2 có dấu ngoặc đơn sau sayHi, thì nó sẽ chạy func chứ không trả về giá trị của bản thân sayHi
+        Chúng ta cũng có thể khai báo bằng biểu thức Expression
+        let sayHi = function(){
+            
+        };   // chúng ta thấy ở đây có dấu chấm phẩy, nó chỉ là đặc chưng cho kết thúc một chức năng,
+        let func = sayHi;
+        ...
+        ---------------------
+        Callback Function
+        Định nghĩa theo ý hiểu ban đầu là chúng ta viết ra 1 loạt chức năng nào đó. sau đó gọi lại chúng trong một chức năng cần thiết.
+
+        function ask(question, yes, no){
+            if(confirm(cauhoi)){co()}else(khong());
+        }
+        function co(){
+            alert('đã trả  lời câu hỏi');
+        }
+        function khong(){
+            alert('Chưa trả lời câu hỏi');
+        }
+        let cauhoi = 'Bạn có muốn trả lời câu hỏi';
+        ask(cauhoi, co, khong);
+        ------------------------
+        Sự khác nhau giữa function Decleration vầ Expression
+        - Cú pháp:
+        - :
+        Function Decleration nó có thể chạy ở bất cứ đâu trong script, 
+        Function Expression khi chức năng được chuyển xang phía bên phải nó có thể được sử dụng bất cứ lúc nào.
+        
+        *********
+        sayHi('hello'); //  hello
+        function sayHi(wecome){
+            alert(`${wecome}`);
+        }
+
+        ********
+        sayHi('hello'); // error
+        let sayHi = function(wecome){
+            alert(`${wecome});
+        };
+
+        ----------
+        function Decleration được khai báo trong 1 khối mã {} nó có thể hiển thị toàn bộ trong khối mã đó,
+        nhưng nếu mang nó ra ngoài thì gây ra 1 lỗi. 
+
+        let age = prompt('kiem tra tuoi', 18);
+        if(age >= 18){
+            function wecome(){
+                alert('Được quyền vào');
+            }
+        }else{
+            function wecome(){
+                alert('không được vào');
+            }
+        }
+        wecome(); //err: wecome not defined
+
+        Với function Expression thì khác.
+        let wecome;
+        let age = prompt('nhap vao tuoi cua ban', 18);
+        if(age <= 18){
+            wecome = function(){
+                alert('Không được truy cập vào vì tuổi nhỏ hơn 18');
+            }else{
+                wecome = function(){
+                    alert('được quyền truy cập vào function');
+                }
+            }
+        }
+        wecome(); // run ok.
+     -->
+</body>
+</html>

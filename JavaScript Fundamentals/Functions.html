@@ -71,7 +71,39 @@
 
         }
         showMess();
+        ----------------
+        Trả về giá trị từ hàm
+        Khi dùng return hàm sẽ trả về giá trị và dừng lại
 
+        function checkAge(age){
+            if(age >= 8){
+                return true;
+            }else{
+                return confirm('Bạn đã được sự đồng ý của bố mẹ?');
+            }
+        }
+        let age = prompt('vui long nhap vao tuoi cua bạn?',18);
+
+        if(!checAge){
+            alert('Không được truy cập');
+        }else{
+            alert('được phép truy cập');
+        }
+        ----------------
+        return trống nó sẽ thoát khỏi function ngay lập tức mà chạy kết quả tiếp theo.
+
+        function checkMovie(age){
+            if(!checkAge(age)){
+                return;
+            }else{
+                alert('Bạn được phép xem phim')
+            }
+        }
+        ---- --
+        Một function trống hoặc return rỗng trả về undefined
+        function check(){}; or function check(){return;}
+        check() === undefined // true
+        
      -->
      
      
