@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+<body>
+    <!-- 
+        hàm mũi tên trong javascript đánh giá biểu thức sau dấu bằng và trả về kết quả của nó
+        ****
+        function sum(a,b){
+            return a+b;
+        }
+        chuyển sang function Arrow nó sẽ thế này
+        let sum = (a,b) => a+b;
+        *****
+        Nếu có một tham số thì dấu ngoặc đơn sẽ bị bỏ qua nó sẽ trônng ngắn hơn thế này
+        let mul = a => a*2;
+        chuyển sang function thông thường
+        function mul(a){
+            return a * 2;
+        }
+        ------------
+        nếu không có đối số cho dù trống thì dấu ngoặc đơn vẫn phải có mặt
+        let kt = () =>  alert('hello');
+        ------------
+        Arrow function có thể dùng trong function expression
+        let age = prompt('tuoi cua bạn là?',19);
+
+        let checkAge = (age >=18) : () => alert('được phép truy cập') ? () => alert('Không được phép truy cập') ; checkAge();
+        ------
+        Khi có nhiều dòng trong function array ta sử dụng dấu {} để viết chúng
+        let sum = (a, b) => {
+            let ketqua = a +b;
+            return ketqua;
+        }
+       alert( sum(12,2));
+        
+
+     -->
+</body>
+</html>
