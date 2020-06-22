@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <!-- 
+        Object sử dụng, thu thập các thuộc tính khóa khác nhau và nhiều thực thể phức tạp.
+        "học ngôn ngữ này không được vội, Phải đi từ căn bản chi tiết đến chuyên sâu"
+        - Một object được tạo bên trong dấu {} gồm nhiều sự lựa chọn về thuộc tính. 
+        Nó được viết như thế này: key: value, trong khi key: luôn là một string và value: là bất kỳ 1 giá trị nào đó.
+        ------
+        Hãy tưởng tượng Object như là một cái tủ nhiều ngăn, Thì key: là các ngăn tủ, và value là đồ đựng trong tủ. Chúng ta có thể 
+        bỏ đồ đó đi, thay đồ khác vào, hoặc không để gì trong key đó. 
+        -----
+        Một Object trống có thể sử dụng 2 cú pháp:
+        let canbinet = new Object(); // gọi là Object contructor
+        let canbinet = {}; // Gọi là Object literal
+        -----
+        Literal and property
+        let user = { // Một object
+            name: 'John', // Giá trị John được lưu trữ bởi khóa name,
+            age: 30, // Giá trị 30 được lưu trữ bởi từ khóa age,
+            "like birt": 'came' // đối tượng thuộc tính đa từ
+        }
+        Giống như tưởng tượng ở trên chúng ta có một cái tủ user trong tủ có 2 ngăn là : name và age 
+        và 2 giá trị lần lượt là John và 30;
+        Chúng ta có thêm, xóa, sửa, sử dụng chúng bất cứ khi nào.
+        Giá trị có thể là bất cứ loại nào: để truy cập chúng ta sử dụng dấu . (dấu chấm);
+        
+        user.isAdmin = true; // chúng ta vừa thêm một ngăn tủ mới với khóa(key) là isAdmin với giá trị true,
+
+        để xóa một thuộc tính chúng ta làm như sau:
+        delete user.age;
+
+        vậy tủ đó bây giờ còn 2 ngăn tủ với khóa là name và isAdmin
+        Thuộc tính cuối cùng có thể kết thúc = dấu  , (phẩy)
+
+        -----------------
+        Đối tượng khai báo = const có thể được sửa đổi, vì nó thay đổi giá trị bên trong đối tượng, nhưng ko thay đổi nó
+        const user ={
+            name: 'John',
+        }
+        user.name = 'Pette';
+        alert(user.name); // Pette
+        ------------------
+        Đối tượng thuộc tính đa từ có dấu cách nên khi chúng ta truy cập = dấu chấm là không được.
+        Nó gấy ra lỗi cú pháp:
+        user.like birt = 'co' // sinh ra 1 lỗi
+        Javascript nó hiểu rằng chúng ta đang truy cập user.like và gặp birt ngay sau và nó không hiểu birt là cái gì. 
+        Dấu chấm yêu cầu chúng ta định danh không chứa khoảng trắng, không có ký tự đặc biệt, không bắt đầu bằng số và được dùng $ và _
+
+        ------
+        Dầu ngoặc vuông làm việc với bất kỳ từ khóa chuỗi nào
+        let user ={}; Khai báo 1 đối tượng
+        //set
+        user['nhap ten'] = 'Nhat';
+        //get
+        alert(user['nhap ten']);
+        //delete
+        delete user['nhap ten'];
+        -------
+        Chúng ta có một số áp dụng như thế này. Dùng khóa để truy cập vào thuộc tính của đối tượng
+        let nhan_vat ={
+            name: 'a lốc',
+            year: 2019,
+            'tiếng việt' : 'không có',
+
+        }
+        let nhap = prompt('Nhập key của nhân vật', 'name');
+        alert(user[nhap]); // Nhập vào đúng giá trị của key nó in ra giá trị trương ứng của key đó.
+        // Chúng ta không thể khai báo như thế này.
+        let user = {
+            name: 'Ok',
+            year: 2010,
+        }
+        let key = 'them'; // chẳng có liên quan họ hàng gì với user cả; 
+        alert(user.key);  //undefined
+        ------------
+        Computed property
+        Khi ta sử dụng dấu ngoặc vuông trong một đối tượng litteral, khi tạo một đối tượng nó được gọi là computed property,
+        Hiểu nó qua ví dụ sau:
+        let traicay = prompt('Nhập vào tên trái cây của bạn','');
+        let giohang = {
+            [traicay] : 5,
+        }
+        alert(giohang.nhat);
+        
+        hiểu đơn giản là [traicay] trong đối tượng literal được lấy từ khai báo traicay ban đầu. Chúng ta nhập đúng với cái kết quả
+        được định nghĩa ở alert thì nó sẽ hiện thị ra giá trị của [traicay]. Nếu không thì là undefined.
+        Nếu chúng ta nhập tên nhat vào trong giohang thì nó object sẽ trở thành 
+        {
+            nhat: 5
+        }
+        Bản chất nó hoạt động như thế này
+        let hoaqua = prompt('nhap vao hoa quả cần mua: ', '');
+        let giohang = {};
+        giohang[hoaqua] = 5;
+
+        Chúng ta có thế sử dụng biểu thức đặc biệt bên trong dấu ngoặc vuông
+        let hoaqua = 'tao';
+        let giohang = {
+            [hoaqua + 'thom'] : 5, // => gionghang.taothom = 5
+        };
+        Khi chúng ta sử dụng những biểu thức phức tạp thì ưu tiên dấu ngoặc vuông
+        -------------
+
+        Property value shorthand
+        function makeUser(name, age){
+            return {
+                name: name,
+                age: age
+            }
+        }
+        let user = makeUser('John', 30);
+        alert(user.name); // John
+
+        Thay vì viết như vậy cho các key trùng với value, các chuyên gia thường viết thế này để giảm số lượng code
+        function makeUser(name, age){
+            return{
+                name, giống như name: name
+                age,
+            }
+        }
+
+        ----------------
+        kiểm tra sự tồn tại của key,
+        Một key không tồn tại nó sẽ trả về undefined
+        Let user = {};
+        alert(user.name === undefined); // => true nghĩa là biến name không tồn tại. 
+        Ngoài ra chúng ta cũng có thể kiểm tra bằng cú pháp sau:
+         "key" in object 
+         let user = {name: 'nhat',};
+         alert("name" in user) // -> true
+
+         xin lưu ý rằng tên từ khóa được đặt trong dấu trích đẫn "" dấu nháy đôi 
+         Nếu không có dấu trích dẫn thì đối tượng đó đã được khai báo từ trước.
+         let user = {name: 'nhat',};
+         let name = "name";
+         alert(name in user) // -> true
+         
+     -->
+</body>
+</html>
