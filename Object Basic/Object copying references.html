@@ -1,0 +1,60 @@
+<!--   
+    Sao chép đối tượng thực ra là chúng ta đang làm công việc là tham chiều
+    2 đối tượng đến cùng 1 giá trị, nếu thay đổi giá trị đó thì 2 đối tượng
+    sẽ cùng thay đổi theo
+
+    let user = {
+        name: 'John',
+    }
+    let user = admin;
+    admin.name = "pete";
+    alert(user.name)// pete
+
+    hãy tượng tượng rằng chúng ta có 1 cái tủ và 2 cái chìa khóa(name), người sử dụng là admin và user;
+    --------------
+    Muốn copy object thì làm thế nào? Chúng ta sẽ dùng vòng lặp để duyệt object sau đó copy giá trị của nó
+    let user = {
+        name: 'nhat',
+        age: 23
+    }
+
+    let clone ={};
+    for(let key in user){
+        user[name] = clone[name];
+    }
+    clone.name = 'admin';
+    alert(user.name); //'Nhất'
+
+    Hoặc dung phương Object.assign(Object gốc, object1, object2);
+    let user = {
+        name: 'Nhat'
+    }
+    let object1 = {allow: true};
+    let object2 = {deny: false};
+    //copy object1, va object 2 vào user
+    Object.assign(user, object1, object2);
+    alert(user.allow) // trúe
+
+    Khi copy một giá trị của khóa đã tồn tại thì nó sẽ ghi đè lên giá trị cũ. 
+    --------------
+    Chúng ta cũng có thể dùng Object.assign() để thay thế vòng lặp for in 
+    let user = {
+        name: 'Nhat',
+        age: 23
+    };
+    let clone = Object.assign({}, user); // nó sẽ copy tất cả thuộc tính của user vào {} rồi trả về clone,
+
+    Không thể dùng Object.assign() để nhân bản sâu, nghĩa là có 2 object lồng nhau, thì object lồng bên trong chỉ được tham chiếu, chứ 
+    không được copy, muốn copy chúng ta phải dùng vòng lặp duyệt từng key một
+    ------------
+    2 object được tham chiếu đến nhau thì chúng bằng nhau
+    let a ={};
+    let b = a;
+    a==b // true
+    a === b // true;
+    Hai object trống không bằng nhau
+    let a = {}
+    let b = {};
+    a == b //false;
+    ---------------------
+ -->

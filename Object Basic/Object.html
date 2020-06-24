@@ -140,7 +140,23 @@
          let user = {name: 'nhat',};
          let name = "name";
          alert(name in user) // -> true
-         
+         -------------
+         For in loop
+         để đi qua tất cả các key của đối tượng tồn tại một dạng vòng lặp : for in , nó hoàn toàn khác với for(;;)
+         cú pháp: for(key in object){
+
+         }
+         let user = {
+             name: 'john',
+             age: 20
+         }
+         for(key in user){
+             alert(key); // name, age
+             alert(user[key]; // john, 20  
+         }
+         lưu ý nếu khóa tạo theo số nguyên thì nó sẽ sắp xếp theo tứ tự, Nếu không thì tạo thế nào thì
+         lúc xuất ra như vậy.
+         -
      -->
 </body>
 </html>
