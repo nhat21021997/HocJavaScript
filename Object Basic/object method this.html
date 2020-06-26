@@ -1,4 +1,84 @@
 <!-- 
+    Ví dụ về phương thức, 
+    let user ={
+        name: 'John',
+        age: 20
+    };
 
+    user.sayHi(){
+        alert('hello');
+    }
     
+    user.sayhi();
+
+    chúng ta đang dạy cho user nói xin chào
+    let user ={};
+    //khai báo function
+    let sayHi = funtion(){
+        alert('xin chào');
+    ;}
+    // dạy cho user nói
+    user.noi = sayHi;
+    user.noi();
+    ---------------------------
+    Phương thức viêt ngắn hơn
+    user = {
+        sayHi : function(){
+            alert('hello');
+        }
+    };
+    nhưng nhìn thế này sẽ tốt hơn.
+    user = {
+        sayHi(){ // giống như sayHi : function()
+            alert("hello");
+        };
+    };
+
+    -------------------------
+    Phương thức this
+    
+    let user = {
+        name: 'John',
+        age: 20,
+        sayHi(){
+            alert(this.name); //trong suốt quá trính chạy this chính là user
+        }
+    }
+    user.sayHi();
+
+    chúng ta có thể sự dụng user.name trong alert nhưng nó xảy ra bất cập khi sao chép user, nó gây ra 1 lỗi là truy cập sai dối tượng
+    let user ={
+        name: 'John',
+        age: 20,
+        sayHi(){
+            alert(user.name);
+        }
+    };
+    let admin = user;
+    user = null;
+    admin.sayHi(); // xảy ra 1 lỗi cannot read property of name
+    --------------------------
+    this không phải ràng buộc, nó có thể dùng chung
+    let admin = {name: 'Quantri'};
+    let user = {name: 'nguoidung'};
+
+    let showAuth = function(){
+        alert(this.name);
+    }
+    admin.chovao = showAuth;
+    user.chovao= showAuth;
+    user.chovao();
+
+    ------------------
+    Arrow function không có this.
+
+    arrow function không có this, nếu chúng ta cố dùng nó thì nó sẽ tham chiếu từ hàm bình thường bên ngoài
+    let user = {
+        name: 'nhat',
+        sayHi(){
+            let arrow = () => alert(this.name); //this nằm trong function arrow
+            arrow();
+        }
+    }
+    user.sayHi();
  -->
