@@ -11,6 +11,55 @@
     }
     let get = new User('Nhat');
     alert(get.ten); // nhat
-    
+    ------
+    Hàm costructor new function() không thể gọi lại, Chúng dùng cho mục đích đóng gói đối tượng duy nhất. Mà không
+    sử dụng lại trong tương lai.
+    let user = new function (){
+        this.name = "John";
+        this.admin = false;
+    };
+----------------
+Constructor mode test: new.target
 
+function User(name){
+    if(!new.target){ // nếu tôi không có gì mới
+        return new User(name); //  thì thêm mới cho tôi
+    }
+    this.name = name;
+}
+let john = User("John");
+alert(john.name);
+
+alert(for(let key in john){alert(key)});
+----------------
+/// Return form constructor
+Thông thường hàm constructor không có return, Nhiệm vụ của họ viết tất cả những thứ cần thiết vào this.
+và nó tự động trở thành kết quả. 
+ - nếu return được gọi với một object. sau đó object được trả về thay vì this.
+ - nếu return được gọi với một giá trị PRIMITIVE, Nó được bỏ qua. 
+Nói cách khác return một object trả về một object, Trong tất cả các trường hợp khác trả về this. 
+
+Ví dụ dưới, đã ghi đè this và trả về đối tượng.
+
+function User(){
+    this.name = 'John'; // khai báo name = this.
+    return {name: 'Miz'}; //khai báo name = đối tượng xuất hiện nó sẽ ghi đè this.
+}
+let get = new User();
+alert(get.name);  //kết quả trả về là Miz
+-------------------
+Một giá trị khác. Chúng ta để return trống,  nghĩa là return về this
+--------------------
+Sử dụng hàm Constructor để tạo một đối tượng rất linh hoạt
+nó định nghĩa được cách để xây dựng đối tượng và đặt gì trong nó. 
+function Wecome(){
+    this.name = name;
+    this.sayHi = function(){
+        alert(name);
+    }
+}
+let john = new Wecome("John");
+john.sayHi();
+
+---
  -->
