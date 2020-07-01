@@ -39,7 +39,7 @@
         Thuộc tính cuối cùng có thể kết thúc = dấu  , (phẩy)
 
         -----------------
-        Đối tượng khai báo = const có thể được sửa đổi, vì nó thay đổi giá trị bên trong đối tượng, nhưng ko thay đổi nó
+        Giá trị bên trong đối tượng được khai báo = const có thể được sửa đổi, vì nó thay đổi giá trị bên trong đối tượng, nhưng ko thay đổi nó
         const user ={
             name: 'John',
         }
@@ -70,7 +70,7 @@
 
         }
         let nhap = prompt('Nhập key của nhân vật', 'name');
-        alert(user[nhap]); // Nhập vào đúng giá trị của key nó in ra giá trị trương ứng của key đó.
+        alert(nhan_vat[nhap]); // Nhập vào đúng giá trị của key nó in ra giá trị trương ứng của key đó.
         // Chúng ta không thể khai báo như thế này.
         let user = {
             name: 'Ok',
@@ -86,6 +86,7 @@
         let giohang = {
             [traicay] : 5,
         }
+        
         alert(giohang.nhat);
         
         hiểu đơn giản là [traicay] trong đối tượng literal được lấy từ khai báo traicay ban đầu. Chúng ta nhập đúng với cái kết quả

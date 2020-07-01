@@ -27,22 +27,22 @@
         Định nghĩa theo ý hiểu ban đầu là chúng ta viết ra 1 loạt chức năng nào đó. sau đó gọi lại chúng trong một chức năng cần thiết.
 
         function ask(question, yes, no){
-            if(confirm(cauhoi)){co()}else(khong());
-        }
-        function co(){
-            alert('đã trả  lời câu hỏi');
-        }
-        function khong(){
-            alert('Chưa trả lời câu hỏi');
-        }
-        let cauhoi = 'Bạn có muốn trả lời câu hỏi';
-        ask(cauhoi, co, khong);
+           return confirm(question) ? yes() : no(); 
+       }
+       function co(){
+           alert('Bạn đã bấm OK');
+       }
+       function khong(){
+           alert('Bạn đã bấm cancel');
+       }
+       let question = 'Chọn OK hoặc cancel';
+       ask(question, co, khong);
         ------------------------
         Sự khác nhau giữa function Decleration vầ Expression
         - Cú pháp:
         - :
-        Function Decleration nó có thể chạy ở bất cứ đâu trong script, 
-        Function Expression khi chức năng được chuyển xang phía bên phải nó có thể được sử dụng bất cứ lúc nào.
+        Function Decleration nó có thể chạy ở bất cứ đâu trong script, trên-dưới function đích!
+        Function Expression khi chức năng được chuyển xang phía bên phải nó có thể được sử dụng bất cứ lúc nào sau đó.
         
         *********
         sayHi('hello'); //  hello

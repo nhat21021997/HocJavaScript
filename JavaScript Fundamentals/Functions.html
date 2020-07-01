@@ -100,7 +100,7 @@
             }
         }
         ---- --
-        Một function trống hoặc return rỗng trả về undefined
+        Một function trống hoặc return rỗng thì function là  undefined
         function check(){}; or function check(){return;}
         check() === undefined // true
         
@@ -108,7 +108,12 @@
      
      
      <script>
+       //function expression có thể viết trong một arrow function 
 
+        let age = +prompt('nhap vao mot so', )
+       let checkAge = age > 18 ? () =>  alert('ok') : () => alert("not ok");
+        checkAge();
+       
     </script>
 </body>
 </html>
