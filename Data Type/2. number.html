@@ -1,0 +1,25 @@
+<!-- 
+    Có 2 loại số trong javascript : Sô thông thường, Số cực lớn
+    1. Rounding
+    Math.floor() Làm tròn xuống, 3.1 thành 3, -1.2 thành 2
+    Math.ceil() Làm tròn lên: 3.1 thành 4
+    Math.round() làm tròn đến số nguyên gần nhất. 3.4 thành 3, 3.6 thành 4, 
+    ------------------
+    Làm tròn bằng phép nhân và chia
+    let num = 1.23456; // làm tròn về phía sau 2 chữ số
+    .. đầu tiên nhân với 100 để đảm bảo 2 chữ số không bị làm tròn, dùng hàm Math.floor làm tròn xuống, 123.456 -> 123
+    .. sau đó chia lại cho 100 để có lại dấu phẩy động 123 -> 1.23
+    2. toFixed(n) làm tròn từ dấu chầm trở đi n bắt đầu = 0
+    - kết quả của toFixed(n) làm một string, chuyển đổi qua số chúng ta có 2 cách
+    ----------------
+    Kiểm tra isFinite() và isNaN()
+    Dùng để chuyển đổi string sang số, nếu fùng Number() or + trong trường hợp 100px thì nó sẽ thất bại
+    giải pháp dùng ParseInt('100px') -> 100 hoặc parseFloat()
+    Nhưng kết quả sẽ là NaN khi định dạng chuyển đổi có ký tự xuât hiện ở đầu. 
+    ----------------
+    Các hàm toán học khác
+    Math.random(); Trả về giá trị từ 0 đến 1 không bao gồm 1
+    Math.min, Math.max, Math.pow();
+    
+
+ -->

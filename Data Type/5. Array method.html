@@ -1,0 +1,57 @@
+<!-- 
+    làm thế nào để xóa phần tử mảng, mảng cũng là một đối tượng
+    có thể dùng delete để xóa phần tử, nhưng khi xóa đi vị trí
+    bị xóa vẫn tồn tại
+    -----------
+    Splice phương pháp của mảng để chèn, xóa, thay thế một vị trí
+    arr.splice(index[, deletcount, element1, ...]);
+    Xóa từ vị trí index đi bao nhiêu phần tử, và thêm vào pt khác
+    Nếu phần tử bị xóa được gán cho giá biến, nó vẫn được lưu trữ trong bộ nhớ
+    ----------
+    slice(start, end); nó trả lại tât cả giá trị từ start đến end, 
+    Không bao gồm end
+    ---------
+    arr.concat([e1, e2]); // thêm phần tử vào mảng
+    --------------
+    Vòng lặp forEach(): cho phép chạy toàn bộ phần tử mảng
+    Thêm nhiều tùy chọn, item, index, array
+    arr.forEach((item, index, array) => {})
+    ---------------
+    Tìm kiếm trong một mảng dùng indexOf,
+    Hãy tượng tưởng có một mảng các object, làm thế nào để lấy ra giá trị
+    trong object đó,
+    ** find or findIndex
+    arr.find((item, index, arrar)=>{});
+    --------------
+    ** filter Phương pháp tìm kiếm phần tử trả về true
+    arr.filter((item, index, array)=>{});
+    let user = [
+        {name: 'Nhat'},
+        {name: 'Nga'}
+    ];
+    let check = user.filter((item) => item.name < 1);
+    alert(check);
+
+    -----------
+    array.map(); Phương thức chuyển đổi và sắp xếp lại mảng
+    let arr = ['nhat', 'nguyen', 'van'];
+    let len = arr.map((item) => item.length);
+    alert(len);
+
+    -------------
+    split chuyển đổi từ chuỗi về mảng
+    join chuyển từ mảng về chuỗi
+    ---------
+    Khi cần lặp lại một mảng dùng forEach, or, for of
+    Khi cần lặp lại và trả về dữ liệu của từng phần tử mảng dùng map
+    reduce cũng giống như các vòng lặp, nhưng nó dùng để tính toán một
+    giá trị duy nhất khi duyệt qua các phần tử
+    -------
+    arr.reduce((accumulator, item, index, array) => {}, initial);
+    // inital là giá trị khởi tạo của accumulator
+
+    let arr = [1, 2, 3, 4, 5];
+    let ketqua = arr.reduce((sum, item) => sum + item, 0); //
+    // 0 là giá trị khởi tạo của sum
+    alert(ketqua);
+ -->

@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
+    <script>
+     //nếu chúng ta quan tâm đến các lần xuất hiện của một từ thì dùng indexOf
+     let str = 'tôi muốn tôi yêu em nhiều hơn tôi nghĩ';
+    let target = 'tôi';
+    let pos ;
+    while((pos = str.indexOf(target, pos + 1)) != -1){
+        alert(pos); // 0, 9, 30
+    }
+    </script>
 </head>
 <body>
-    <script>
-        
-    </script>
+    
+    <div class="">s</div>
 </body>
 </html>

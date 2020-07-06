@@ -1,0 +1,39 @@
+<!-- 
+    String Length
+    Truy cập đến các phần tử của string dùng str[0];
+    Phần tử cuối cùng: st[str.length -1]
+
+    -----------
+    str.indexOf(substr, pos);
+    //Tìm vị trí của các phần tử trong chuỗi
+    let str = 'tôi muốn tôi yêu em nhiều hơn tôi nghĩ';
+    let target = 'tôi';
+    let pos ;
+    while((pos = str.indexOf(target, pos + 1)) != -1){
+        alert(pos); // 0, 9, 30
+    }
+    Có một chút bất tiện với kiểm tra if là str.indexOf('string bắt đầu = 0') thì if 
+    sẽ không chạy, vì  0 == false; nên phải check nó với -1
+    --------------
+    str.include(substr, pos); trả về true or false
+    --------------
+    Bắt đầu với một chuỗi con
+    Có 3 phương thức trong javascript để lấy  một substring
+    - substring
+    - substr
+    - slice
+    1. slice(start [, end]); trả về giá trị từ start đến end không bao gồm end;
+        Nếu không có đối số thứ 2,  thì nó sẽ lấy từ vị trí đó đến end
+    2. str.substring(start[, end]) lấy giá trị khoảng giữa start và end
+    3. str.substr(start[, length]); lấy giá trị từ độ dài cho trước
+    ------------
+    So sánh chuỗi
+    str.codePointAt(pos); Lấy vị trí của str trong bảng mã và ngược lại
+     String.fromCodePoint(code)
+    ---------------
+    Kiểm tra độ chính xác của chuỗi
+    - str.localeCompare(str2);
+    --------------
+
+
+ -->

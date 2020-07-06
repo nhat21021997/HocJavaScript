@@ -1,0 +1,33 @@
+<!-- 
+    Object luôn cho phép chúng ta lưu trữ khóa và giá trị. Nhưng nó không thể lấy được vị trí 
+    của phần tử, và array giải quyểt vấn đề đó
+    ---------
+    Có 2 cách để khai báo
+    let arr = new Array();
+    let arr = [];
+    -----------
+    Phương thức, 
+    Push - pop nối xóa phần từ ở cuối.
+    ----
+    Internal
+    Array là một loại đối tượng đặc biệt.
+    Nó làm việc theo tính đối tượng và độ dài
+    -----------
+    Vòng lặp
+    Các cũ chúng ta dùng vòng lặp for(), cách mới dùng for(of);
+    [for of] chỉ cho phép truy cập vào giá trị của mảng, Không có độ dài
+    Không sử dụng for in trong mảng vì nó là một ý tưởng tồi
+    -------------
+    Độ dài của mảng.
+    Thuộc tính độ dài nó không đếm, mà nó tính = cách dùng độ dài thực tế + thêm 1
+    ------------
+    Khi cắt độ dài của mảng đi, chúng ta không thể không phục lại nó đc
+
+    let arr = [1, 2, 3, 4, 5];
+    arr.length = 2; // truncate to 2 elements
+    alert( arr ); // [1, 2]
+    arr.length = 5; // return length back
+    alert( arr[3] ); // undefined: the values do not return
+
+    
+ -->
