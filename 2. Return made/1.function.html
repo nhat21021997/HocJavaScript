@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <script>
+        /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        function có toàn quyền truy cập biến bên ngoài và sửa đổi nó
+        */
+        let bien = 2; //tạo biến bên ngoài
+        function sayHi(name){
+            name = 5; // thay đổi bên trong được ưu tiên
+            console.log(name);
+        };
+        sayHi(3); // kết quả ra 5
+        // -> biến bên ngoài sẽ được sử dụng nếu biến bên trong không được khai báo
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            Một hàm luôn nhận một bản sao của một giá trị
+            Hàm không có giá trị hoặc có return trống sẽ = với undefined;
+        */
+        function checkEmpty(){
+
+        };
+        console.log(checkEmpty() == undefined); // true
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            CallBack là viết ra các chức năng rồi gọi lại nó trong một chức năng
+        */
+        let a = 3;
+        let b = 5;
+        let tongHop = function(tong, tich, thuong, hieu) {
+            console.log(`Kết quả của a và b là : Tổng: ${tong}, Tích ${tich}, Thương ${thuong} , Hiệu : ${hieu} `);
+        };
+        function phepcong(){
+            return a + b;
+        };
+        let phepNhan = function(){
+            return a * b;
+        };
+        let phepchia = function(){
+            return a / b;
+        }
+        let phepTru = function(){
+            return a - b;
+        }
+        tongHop(phepcong(), phepNhan(), phepchia(), phepTru());
+        /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            Sự khác nhau giữa func Decleration và Expression
+            - Deleration  func có thể chạy và sử dụng bất cứ đây trên khối mã {} bao bọc nó,
+            - Exppression chỉ chạy func khai báo phía trước khối mã {}, nhưng nó giải quyết được vấn đề local trong {} của thằng deleration
+        */        
+        //------------------Function Delaration
+            let age = 12;
+            //fDec(); Gây ra lỗi func chưa khai báo
+            if(age < 18){
+                fDec();
+                function fDec(){
+                    console.log("Thiếu tuổi đi phượt");
+                }
+                
+            }else{
+                console.log('Đủ tuổi')
+            }
+
+        //------------------Function Expression
+        let exName = 'John';
+        let getFirstString = exName.slice(0, 1);
+        let sayHi1;
+        if(exName !== 'J'){
+            sayHi1 = function(){
+                console.log(`Xin chào ${exName}`);
+            }
+            
+        }else{
+            sayHi1 = function(){
+                console.log(`Tên phải bắt đầu = J`);
+            } 
+        }
+        sayHi1(); // Bắt buộc phải chạy ở ngoài khối {}
+        
+    </script>
+</body>
+</html>

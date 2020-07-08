@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            Object lưu trữ 2 thuộc tính  key và value: Trong đó key luôn là string, value giá trị bất kì. 
+            Khóa đa từ được trích đẫn trong dấu nháy '', và được gọi trong dấu ngoặc vuông []
+            Giá trị bên trong được truy cập = dấu chấm. 
+            Khi chúng ta sử dụng dấu ngoặc vuông bên trong đối tượng literals thì kêy đó sẽ được thay đổi
+            từ bên ngoài. 
+            Đi qua tất cả các key của đối tượng ta dùng for in, nếu key không tồn tại trả về undefined
+            Sao chép 2 đối tượng thực chất là làm công việc tham chiếu hai đối tượng đó, nếu thay đổi một 
+            trong 2 thì cả 2 sẽ thay đổi. 
+            Sao chép 2 đối tượng không bị tham chiếu ta dùng vòng lặp, và gán các giá trị đó cho đối tượng mới
+            hoặc dùng Object.assign();
+        */
+        //---------------Object constructor
+            let subject = new Object();
+        //--------------Object literals
+            let subject1 = {}
+        //--------------Khóa đa từ
+            let user = {
+                'nguyen nhat' : 'Giá trị của tên',
+            }
+            console.log(user['nguyen nhat']);// Giá trị của tên.
+        //--------------[] trong object = {}
+        let linkExternal = 'dathaydoi';
+        let oUser = {
+            [linkExternal]: 5,
+        }
+        for(let key in oUser){
+            console.log(key); //dathaydoi
+        }
+        console.log(oUser.dathaydoi); //5 
+        //-------------- Sao chép 2 đối tượng
+        let oDt1 = {
+            name: 'John',
+        }
+        let oDt2 = oDt1;
+        oDt2.name = 'Nhat';
+        console.log('so sánh đối tượng 1 và 2 ' + oDt1.name)// Nhat
+        //-------------- Sao chép 2 đối tượng Không bị tham chiếu vòng lặp
+        let Ouser = {
+            name: 'copy'
+        };
+        let Cuser = {};
+        for(let key in Ouser){
+            Ouser[key] = Cuser[key];
+        }
+        console.log('name' in Cuser);
+        console.log(); // Vòng lặp không hiểu 
+         //-------------- Sao chép 2 đối tượng Không bị tham chiếu Object.assign()
+         let OaCopy = {
+            name : 'Nhat Nguyen'
+         };
+         let OaPy = Object.assign({}, OaCopy);
+         OaCopy.name = 'em';
+         console.log('name' in OaPy); // key phải có dấu nháy
+         console.log(OaPy.name);
+         //  
+    </script>
+</body>
+</html>
