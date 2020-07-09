@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            Math.floor(); làm tròn xuống, 
+            Math.ceil(); làm tròn lên,
+            Làm tròn toàn vẹn = phép nhân và phép chia
+            toFixed() làm tròn từ dấu chấm trở đi n phần tử, bắt đầu tính từ 0, kết quả trả về String;
+            Chuyển từ string sang number mà có dính string ở cuối, nếu dùng hàm Number() sẽ không cho ra kết quả như ý:
+            dùng parseInt(); đến chuyển đổi,
+            Lấy thứ phần tử trong string dùng dấu ngoặc vuông [];
+            indexOf(target, pos); tìm vị trí của phần tử trong chuỗi; target: chuỗi cần tìm, pos: tìm từ vị trí
+        */  
+        let num = 3.133445;
+        console.log('làm tròn xuống từ 3.1 dùng floor: ' + Math.floor(num)); //3
+        console.log('làm tròn lên từ 3.1 dùng ceil: ' + Math.ceil(num)); //4
+        console.log('làm tròn  3.1 đến số nguyên gần nhất dùng round: ' + Math.round(num)); //3
+
+        // ----------tạo số num có giá trị 31.3
+        function mround(num){
+            return num = Math.floor(num*100)/10; // 
+        }
+        console.log(mround(num));
+
+        // ----------toFixed() 
+        let fixed = num.toFixed(3);
+        console.log(fixed) ;console.log(typeof(fixed));
+        // ----------parseInt()
+        let numLastText = '100px';
+        console.log('Chuyển bằng number ' + +numLastText); // NaN
+        console.log('Chuyển bằng parseInt ' + parseInt(numLastText)); // 100
+
+        let textFirstNum = 'px100';
+        console.log('Chuyển bằng number ' + +textFirstNum); // NaN
+        console.log('Chuyển bằng parseInt ' + parseInt(textFirstNum)); // NaN
+        // ----------Math.random() trả về ;
+        let testRan = Math.random();
+        console.log('kết quả của Math.random() là ' + testRan);
+        console.log('kết quả của random từ 0 đến 10 là ' + Math.floor(Math.random()* 10)); // Math.random() => 0.14193990518180577 ;
+        // 0.14193990518180577 *10 = 1.4193990518180577 -> Math.floor(1.4193990518180577) -> 1
+        // ----------Lấy phần tử trong chuỗi
+        let str = 'Chuoinay';
+        let getStr = str[2] + str[str.length -1];
+        console.log('Chuỗi được lấy là: ' + getStr)
+        let searchIndexStr = str.indexOf('i', 0); 
+        console.log(searchIndexStr);
+        //*********Trường hợp có 3 chữ i đầu tiên trong chuỗi có 10 chữ i
+        let charI = 'i w i 34 i i i iiii1 iiii 5 iii';
+        let target = 'i';
+        let pos = 0; // đặt vị trí bắt đầu tìm i
+        while(((pos = charI.indexOf(target, pos + 1)) != -1) && ((pos = charI.indexOf(target, pos + 1)) < charI[3])){
+            console.log('Vị trí của i là: ' + pos);
+        };
+    </script>
+</body>
+</html>

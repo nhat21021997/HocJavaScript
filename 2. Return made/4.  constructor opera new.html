@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contructor opera new</title>
+</head>
+<body>
+    <script>
+        /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            Hàm constructor new không thể gọi lại, chúng dùng cho mục đích duy nhất không cần gọi lại trong tương lai
+            Nếu tôi chưa tồn tại thì tạo constructor mới cho tôi. 
+            Hàm constructor không có return. Nếu return object thì trả về object còn đầu trả hết về this. 
+            Hàm constructor định nghĩa được xây dựng và đặt gì trong nó, luôn có this
+        */          
+        //------------- định nghĩa
+        function User(){
+            console.log('New')
+        }
+        let user = new User(); // chính là chạy cuộc gọi, 
+        //user(); sinh ra một lỗi
+        //------------- constructor mode test
+        function tUser(name){
+            if(!new.target){
+                return new tUser(name); // tạo mới 1 constructor
+            }else{
+                console.log('tạo mới thất bại')
+            }
+        }
+        console.log(tUser())
+        //------------- constructor không return, nên nó luôn trả về this, trừ object -> return object
+        function SayHi(){
+            this.name = 'John';
+            return; // return trống nghĩa là return this;
+        };
+        let ok = new SayHi().name;
+        console.log(ok);
+
+       
+        function SayHello(){
+            if(!new.target){
+                return funs;
+            }
+            this.name = 'Test';
+            return {name : 'Object'};
+        }
+        let funs = new SayHello().name;
+        console.log(funs);
+        //------------ 
+        function MakeFunc(fname){
+            this.fname = fname;
+            this.sayHii= function(){
+                console.log(fname + '__');
+            }
+        }
+        let makeu = new MakeFunc('Name of Func'); 
+        makeu.sayHii();
+    </script>
+</body>
+</html>

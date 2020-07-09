@@ -18,6 +18,7 @@
             trong 2 thì cả 2 sẽ thay đổi. 
             Sao chép 2 đối tượng không bị tham chiếu ta dùng vòng lặp, và gán các giá trị đó cho đối tượng mới
             hoặc dùng Object.assign();
+            Object luôn đúng trong câu lệnh if();
         */
         //---------------Object constructor
             let subject = new Object();
@@ -62,7 +63,42 @@
          OaCopy.name = 'em';
          console.log('name' in OaPy); // key phải có dấu nháy
          console.log(OaPy.name);
-         //  
+         // lưu ý Object.assign() Không dùng để nhân bản sâu. 
+
+        //-------------- Làm việc với phương thức this
+
+        let tUser = {
+            name : 'Nhat',
+        }
+        
+        function sayHi(){
+            console.log(`xin chào ${this.name}`);
+        }
+        tUser.runSay =  sayHi; // đặt tên cho key trong  tUser là runSay
+        console.log(tUser.runSay());
+
+        //-------------- Arrow function không có this nên nó sẽ trỏ về thằng trên nó
+        
+        let arrowThis = {
+            name : 'John',
+            sayHi(){
+                let arr = () => {
+                    console.log(this);
+                }
+                arr();
+            } 
+        };
+        arrowThis.sayHi(); // ra cả function arrowThis
+        //------------  Dùng this khắc phục được lỗi khi nhân bản 
+        let xxx = {
+            title : 'Name',
+            watch(){
+                console.log(xxx.title);
+            }
+        };
+        let xnxx = xxx;
+        console.log(xnxx.watch());
+
     </script>
 </body>
 </html>
