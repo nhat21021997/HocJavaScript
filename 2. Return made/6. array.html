@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        Có 2 cách khai báo Array: 
+        Thêm và xóa phần tử vào cuối Array dùng push - pop 
+        Dùng vòng lặp for() hoặc for of để duyệt mảng, Dùng for in là 1 cách tồi tệ với mảng. 
+        Họ không đếm độ dài của mảng mà lấy độ dài thực tế + thêm 1 .  
+        Khi cắt độ dài của mảng, sẽ không thể khôi phục được giá trị gốc 
+    */
+     //------------- Khác nhau giữa for in và for of   
+    let arr = [4, 1, 5, 3, 'a'];
+    for(let key of arr){
+        console.log('for of: ' + key); // 4, 1, 5, 3, a lấy theo kết quả của mảng
+    }
+    for(let key in arr){
+        console.log('for in: ' + key); // 0,1,2,3,4 lấy ra vị trí theo thứ tự
+    }
+    //--------------Độ dài mảng
+    arr.length = 3;
+    console.log(arr[3]); //undefined;
+    
+    </script>
+</body>
+</html>

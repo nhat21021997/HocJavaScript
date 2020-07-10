@@ -16,6 +16,9 @@
             dùng parseInt(); đến chuyển đổi,
             Lấy thứ phần tử trong string dùng dấu ngoặc vuông [];
             indexOf(target, pos); tìm vị trí của phần tử trong chuỗi; target: chuỗi cần tìm, pos: tìm từ vị trí
+            str.include(target, pos); trả về true hoặc false;
+            Có 3 phương thức trong javascript để lấy một chuỗi con: substring: lấy khoảng giữa start và end, substr: lấy từ start đến length, slice
+            Kiểm tra độ chính xác của chuỗi: str.localeCompare(str2);
         */  
         let num = 3.133445;
         console.log('làm tròn xuống từ 3.1 dùng floor: ' + Math.floor(num)); //3
@@ -57,6 +60,30 @@
         while(((pos = charI.indexOf(target, pos + 1)) != -1) && ((pos = charI.indexOf(target, pos + 1)) < charI[3])){
             console.log('Vị trí của i là: ' + pos);
         };
+        //********* indexOf của if không check được với 0, vì 0 = false, nên phải check nó với trừ 1
+        if(pos = charI.indexOf(target, pos + 1) == 0){
+            console.log(1);
+        }
+        //********* str.include(target, pos);
+        if(charI.includes(3, 0)){
+            let x = Array.from(charI);
+            for(let i = 0; i < x.length; i++){
+                if(x[i] == '3'){
+                    x[i] = '4';
+                }
+               
+            }
+            let z = x.join(''); // Bỏ dấu phẩy của mảng = hàm join không có gì
+            console.log(z);
+        }
+
+        // ---------- slice(start [,end]) : trả về giá trị từ start đến end, Không bao gồm end
+        let sliceTest = charI.slice(0, 8);
+        console.log(sliceTest); //i w i 34
+        // ---------- localeCompare()
+        let v1 = '2';
+        let v2 = '2';
+        console.log(v1.localeCompare(v2)); // trẩ về 0 và -1 
     </script>
 </body>
 </html>
