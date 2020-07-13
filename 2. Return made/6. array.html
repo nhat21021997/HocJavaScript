@@ -15,6 +15,8 @@
         Dùng vòng lặp for() hoặc for of để duyệt mảng, Dùng for in là 1 cách tồi tệ với mảng. 
         Họ không đếm độ dài của mảng mà lấy độ dài thực tế + thêm 1 .  
         Khi cắt độ dài của mảng, sẽ không thể khôi phục được giá trị gốc 
+        Làm thế nào để xóa một phần tử của mảng(xóa cả vị trí), Nếu dùng delete sẽ không mất vị trí
+
     */
      //------------- Khác nhau giữa for in và for of   
     let arr = [4, 1, 5, 3, 'a'];
@@ -28,6 +30,85 @@
     arr.length = 3;
     console.log(arr[3]); //undefined;
     
+    //-------------- arr.splice(index, deleteCount, Element);
+    let arrOrigin = [9,8,7,6,5,4,3,2,1];
+    let removeArr = arrOrigin.splice(3,1); // từ phần từ thứ 3 trở đi lấy 1 phần tử
+    console.log("ket qua" + removeArr);
+    //--------------arr.slice(start, end); trả về phần tử từ start đến end, không bao gồm end
+    let arrSlice = arrOrigin.slice(2, 7)// 765432 tính từ phần tử thứ 2 lấy 7 phần tử sau đó
+    console.log(arrSlice);
+    //-------------- arr.concat([e1, e2]); // thêm phần tử vào cuối mảng
+    let addArr = arrOrigin.concat(['a', 'b']);
+    console.log(addArr);
+    //-------------- forEach cho phép lặp toàn bộ phần tử mảng
+    arrOrigin.forEach((item, index, array) => {
+        console.log(`item : ${item}  index : ${index} array: ${array}`); //item : 9  index : 0 array: 9,8,7,5,4,3,2,1 /\..
+    })
+    //-------------- object in arr tìm kiếm phần tử mảng đối tượng dùng find
+    const obInArr = ['2', 
+        {name: 'a'},
+        {age : 200},
+        {school: 'Minhtri', class: 5},{school: 'Minhtri', class: 4}
+    ];
+    const findObInOb = obInArr.find(item => item.school === 'Minhtri'); 
+    console.log(findObInOb); //{school: "Minhtri", class: 5}
+    //-------------- arr.filter();
+    let arrFilter = obInArr.filter(item => item.school === 'Minhtri');
+    console.log(arrFilter); // 0: {school: "Minhtri", class: 5} ,1: {school: "Minhtri", class: 4}
+    //--------------  split chuyển đổi từ chuỗi về mảng, join chuyển từ mảng về chuỗi
+    let string = 'anh em tot';
+    console.log(string.split(' '));
+    //-------------- Duyệt một mảng dùng forEach hoặc for of
+    //-------------- Lặp lại và trả về từng dữ liệu của từng phần tử dùng map
+    //--------------  reduce cũng giống như các phần tử nhưng nó dùng để tính toàn hoặc tập hợp về cùng một giá trị của mảng
+        let user = [
+            {name: 'A', age : 9},
+            {name: 'B', age: 8},
+            {name: 'C', age: 9}
+        ];
+        function groupByAge(arrayObject, age){
+            return arrayObject.reduce((acc, arrayObject) => {
+                let key = arrayObject[age];
+                if(!acc[key]){
+                    acc[key] = [];
+                }
+                    acc[key].push(arrayObject);
+            
+                return acc;
+                
+            }, {});
+
+        }
+        let group = groupByAge(user, 'age');
+        console.log(group)
+
+        let friends = [
+            {name: 'A', books: '1', age: 20},
+            {name: 'B', books: '9', age: 21}
+        ]
+        // viết function tổng hợp book về 1 mảng duy nhất
+        let allBooks = (arrOb, books) => {
+            return arrOb.reduce((acc, arr) => [...acc,...arr.books ],['Nhat']);
+        };
+        console.log(allBooks(friends, 'books'));
+
+    //--------------Thuật toán so sánh
+    let arrSort = [1, -2, 15, 2, 0, 8];
+    arrSort.sort((a,b) => a -b);
+    console.log(arrSort);
+
+    let avAga = {
+        maxAge: 12,
+        minAge: 7,
+        canJoin(vuser){
+            return this.maxAge >= vuser.age && this.minAge <= vuser.age ;
+        }
+    };
+    let user1 = [{age: 20},{age: 4}, {age: 8}];
+   let solider =  user1.filter(avAga.canJoin, avAga);
+   console.log(solider[0]);
+
+   
     </script>
 </body>
 </html>
